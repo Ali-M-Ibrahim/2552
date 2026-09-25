@@ -1,0 +1,7 @@
+1) To create Laravel project:
+composer create-project Laravel/Laravel appName
+
+
+2) To run Laravel project:
+go to your project folder, open terminal and run:
+php artisan serve
