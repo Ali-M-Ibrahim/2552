@@ -5,3 +5,9 @@ composer create-project Laravel/Laravel appName
 2) To run Laravel project:
 go to your project folder, open terminal and run:
 php artisan serve
+
+
+3) Upon cloning the project from GitHub always 
+  - copy .env.example and name it .env
+  - execute: composer install
+ to create vendor folder	
