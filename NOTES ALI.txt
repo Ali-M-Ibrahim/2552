@@ -22,3 +22,27 @@ php artisan route:list
 php artisan make:controller controllerName
 
 the controller will be created under app/http/controllers	
+
+
+6) to create a model with migration:
+php artisan make:model ModelName -m
+-m means migration
+
+7) to create the tables in the database
+php artisan migrate
+
+
+8) to drop all tables:
+php artisan migrate:reset
+
+9) to drop and create in same query:
+php artisan migrate:refresh
+
+10) if you want to add a column to an existing migration and already migrated,
+you create a migration for this tables
+php artisan make:migration name --table=tableName
+
+11) to check the status of the migrations
+php artisan migrate:status
+12) to reverst last batch
+php artisan migrate:rollback
