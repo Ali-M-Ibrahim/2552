@@ -21,6 +21,7 @@ return new class extends Migration
             $table->double('fees');
             $table->string('email');
             $table->string('age');
+            $table->foreignId('university_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

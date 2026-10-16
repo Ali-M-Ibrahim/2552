@@ -11,7 +11,7 @@ class Customer extends Model
         return $this->hasOne(Credential::class);
     }
 
-    public function getAccounts()
+    public function accounts()
     {
         return $this->hasMany(Account::class);
     }

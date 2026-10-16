@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('email')->unique();
             $table->boolean('is_active')->default(true);
-            $table->index(['name', 'address']);
+            $table->index(['name', 'email']);
             $table->timestamps();
         });
     }

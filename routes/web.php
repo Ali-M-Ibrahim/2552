@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\InvokableController;
+use App\Http\Controllers\RelationController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
@@ -160,3 +163,24 @@ Route::get('second-controller-old', [
 ]);
 
 Route::get('invoke-method', InvokableController::class)->name('invoke-method');
+
+Route::get('get-customer', [CustomerController::class, 'index']);
+
+Route::get('get-all', [DataController::class, 'getAll']);
+Route::get('getById/{id}', [DataController::class, 'getById']);
+Route::get('getByCondition', [DataController::class, 'getByCondition']);
+Route::get('getByMultipleConditions', [DataController::class, 'getByMultipleConditions']);
+Route::get('getCustomerLike', [DataController::class, 'getCustomerLike']);
+Route::get('getCustomerIn', [DataController::class, 'getCustomerIn']);
+Route::get('getCustomerWithOr', [DataController::class, 'getCustomerWithOr']);
+Route::get('getCustomerBetween', [DataController::class, 'getCustomerBetween']);
+Route::get('getSpecificData', [DataController::class, 'getSpecificData']);
+Route::get('getDistinctSalary', [DataController::class, 'getDistinctSalary']);
+Route::get('getCustomerOrdered', [DataController::class, 'getCustomerOrdered']);
+Route::get('Arithmetic', [DataController::class, 'Arithmetic']);
+Route::get('PluckData', [DataController::class, 'PluckData']);
+Route::get('latestData', [DataController::class, 'latestData']);
+Route::get('groupBySalary', [DataController::class, 'groupBySalary']);
+Route::get('getDataJoin', [DataController::class, 'getDataJoin']);
+
+Route::get('relation', [RelationController::class, 'index']);
