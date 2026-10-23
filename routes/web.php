@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\InvokableController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RelationController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -184,3 +185,17 @@ Route::get('groupBySalary', [DataController::class, 'groupBySalary']);
 Route::get('getDataJoin', [DataController::class, 'getDataJoin']);
 
 Route::get('relation', [RelationController::class, 'index']);
+
+Route::get('create1', [ProductController::class, 'create1']);
+Route::get('create2', [ProductController::class, 'create2']);
+Route::get('create3', [ProductController::class, 'create3']);
+
+Route::get('update1/{id}', [ProductController::class, 'update1']);
+Route::get('massUpdate', [ProductController::class, 'massUpdate']);
+
+Route::get('createOrUpdate/{id}', [ProductController::class, 'createOrUpdate']);
+
+Route::get('duplicate/{id}', [ProductController::class, 'duplicate']);
+Route::get('delete/{id}', [ProductController::class, 'delete']);
+
+Route::get('massDelete',[ProductController::class,'massDelete']);
