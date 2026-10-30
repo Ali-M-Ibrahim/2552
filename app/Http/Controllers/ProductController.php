@@ -157,8 +157,10 @@ class ProductController extends Controller
         return 'deleted';
     }
 
-    public function massDelete(){
-        Product::where('price','>',500)->delete();
-        return "rows deleted";
+    public function massDelete()
+    {
+        Product::where('price', '>', 500)->delete();
+
+        return 'rows deleted';
     }
 }
