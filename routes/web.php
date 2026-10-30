@@ -3,9 +3,11 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\FirstController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\InvokableController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RelationController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
@@ -198,4 +200,13 @@ Route::get('createOrUpdate/{id}', [ProductController::class, 'createOrUpdate']);
 Route::get('duplicate/{id}', [ProductController::class, 'duplicate']);
 Route::get('delete/{id}', [ProductController::class, 'delete']);
 
-Route::get('massDelete',[ProductController::class,'massDelete']);
+Route::get('massDelete', [ProductController::class, 'massDelete']);
+
+Route::get('page1', [WebsiteController::class, 'index']);
+Route::get('page2', [WebsiteController::class, 'blog']);
+Route::get('file', [WebsiteController::class, 'file']);
+
+//
+Route::get('products', [FrontController::class, 'index'])->name('list-products');
+Route::get('create-product', [FrontController::class, 'create'])->name('create-product');
+Route::post('save-product', [FrontController::class, 'save'])->name('save-product');
