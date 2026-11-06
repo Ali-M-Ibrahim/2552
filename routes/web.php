@@ -5,12 +5,15 @@ use App\Http\Controllers\DataController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\InvokableController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RelationController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+
 
 // To define a route on laravel,
 // Route::method('uri',function(){ treatment });
@@ -210,3 +213,18 @@ Route::get('file', [WebsiteController::class, 'file']);
 Route::get('products', [FrontController::class, 'index'])->name('list-products');
 Route::get('create-product', [FrontController::class, 'create'])->name('create-product');
 Route::post('save-product', [FrontController::class, 'save'])->name('save-product');
+
+
+
+Route::get('category',[CategoryController::class,'list'])->name('list-category');
+Route::get('add-category',[CategoryController::class,'add'])->name('add-category');
+Route::post('store-category',[CategoryController::class,'store'])->name('store-category');
+Route::get('show-category/{id}', [CategoryController::class, 'show'])->name('show-category');
+Route::get('delete-category/{id}', [CategoryController::class, 'delete'])->name('delete-category');
+Route::delete('delete-category/{id}', [CategoryController::class, 'delete'])->name('delete-category2');
+Route::get('edit-category/{id}',[CategoryController::class,'edit'])->name('edit-category');
+Route::put('update-category/{id}',[CategoryController::class,'update'])->name('update-category');
+
+
+
+Route::resource('item',ItemController::class);
